@@ -1,6 +1,6 @@
 .layer-container {
-  margin-top: 35px;
-  margin-left: 30px;
+  /*margin-top: 35px;*/
+  /*margin-left: 30px;*/
   border-radius: 1px;
 }
 
@@ -31,6 +31,7 @@
 }
 .background-block{
   border-right: 1px solid grey;
+  flex: 1 0 auto;
 }
 
 .background-block:last-child{

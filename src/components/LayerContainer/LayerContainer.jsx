@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import LayerDropzone from '../LayerDropzone/LayerDropzone';
-import { blocks, blockWidth, firstBlockWidth } from '../../constants/constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import {blocks, blockWidth, firstBlockWidth} from '../../constants/constants';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 import './LayerContainer.css';
 import RoadmapItem from '../RoadmapItem/RoadmapItem';
 
@@ -17,19 +17,23 @@ class LayerContainer extends Component {
 
   handleDrop = () => {
     if (this.state.isFirstRowAvailable) {
-      this.setState({ firstRow: [...this.state.firstRow, "bar"] });
+      this.setState({firstRow: [...this.state.firstRow, "bar"]});
     } else {
-      this.setState({ secondRow: [...this.state.secondRow, "bar"] });
+      this.setState({secondRow: [...this.state.secondRow, "bar"]});
     }
-    this.setState({ isFirstRowAvailable: !this.state.isFirstRowAvailable, isSecondRowAvailable: !this.state.isSecondRowAvailable });
+    this.setState({
+      isFirstRowAvailable: !this.state.isFirstRowAvailable,
+      isSecondRowAvailable: !this.state.isSecondRowAvailable
+    });
   };
 
   handleShow = () => {
-    this.setState({ isZoneShown: !this.state.isZoneShown})
+    this.setState({isZoneShown: !this.state.isZoneShown})
   };
 
   render() {
-    const { firstRow, secondRow, isFirstRowAvailable, isSecondRowAvailable, isZoneShown } = this.state;
+    const {firstRow, secondRow, isFirstRowAvailable, isSecondRowAvailable, isZoneShown} = this.state;
+    const {month} = this.props;
 
     return (
       <div className="layer-container">
@@ -41,10 +45,12 @@ class LayerContainer extends Component {
           isZoneShown &&
           <div className="layer-container-dropzone">
             <div className="layer-container-background-dropzone">
-              <div style={{ width: `${firstBlockWidth}%` }} className="background-block" />
               {
-                blocks.map((item, index) => {
-                  return <div key={index} style={{ width: `${blockWidth}%` }} className="background-block"></div>
+                month.map((item, index) => {
+                  return <div
+                    key={index}
+                    className="background-block"
+                  />
                 })
               }
             </div>
@@ -52,13 +58,13 @@ class LayerContainer extends Component {
             <div className="layer-container-firstrow">
               {
                 firstRow.map((item, index) => {
-                  return <RoadmapItem number={2 * index + 1} key={index} />
+                  return <RoadmapItem number={2 * index + 1} key={index}/>
                 })
               }
               {
                 isFirstRowAvailable
                   ? (
-                    <LayerDropzone handleDrop={this.handleDrop} />
+                    <LayerDropzone handleDrop={this.handleDrop}/>
                   )
                   :
                   null
@@ -69,13 +75,13 @@ class LayerContainer extends Component {
             <div className="layer-container-secondrow">
               {
                 secondRow.map((item, index) => {
-                  return <RoadmapItem number={2 * (index + 1)} key={index} />
+                  return <RoadmapItem number={2 * (index + 1)} key={index}/>
                 })
               }
               {
                 isSecondRowAvailable
                   ? (
-                    <LayerDropzone handleDrop={this.handleDrop} />
+                    <LayerDropzone handleDrop={this.handleDrop}/>
                   )
                   :
                   null

@@ -83,24 +83,23 @@
   /*list-style-type: none;*/
 /*}*/
 .timeline-container {
-  min-height: 25px;
-  margin-left: 30px;
-  margin-top: 40px;
+  height: 100%;
+  padding-left: 30px;
+  padding-top: 40px;
   position: relative;
+  overflow: auto;
 }
 .timeline-blocks-wrapper {
   width: 100%;
   display: flex;
-  position: absolute;
   min-height: 70px;
   z-index: 1;
-  height: 100%;
 }
 .timeline-block {
-  /*border-right: 1px solid grey;*/
+  flex: 1 0 auto;
   position: relative;
 }
-.timeline-block:nth-child(3n):before {
+.quater{
   border-right: none;
   position: absolute;
   top: -15px;

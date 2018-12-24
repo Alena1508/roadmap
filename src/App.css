@@ -2,7 +2,9 @@
 body {
   color: black;
 }
-
+* {
+  box-sizing: border-box;
+}
 h1, h3 {
   margin: 0;
 }
