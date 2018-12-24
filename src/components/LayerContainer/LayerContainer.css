@@ -1,0 +1,50 @@
+.layer-container {
+  margin-top: 35px;
+  margin-left: 30px;
+  border-radius: 1px;
+}
+
+.layer-container-header {
+  background: orangered;
+  color: white;
+  padding: 10px 20px;
+}
+
+.layer-container-dropzone{
+  height: auto;
+  min-height: 70px;
+  background: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.layer-container-background-dropzone {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  min-height: 70px;
+  z-index: 1;
+  height: 100%;
+}
+.layer-icon {
+  cursor: pointer;
+}
+.background-block{
+  border-right: 1px solid grey;
+}
+
+.background-block:last-child{
+  border-right: none;
+}
+
+.layer-container-firstrow{
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.layer-container-secondrow{
+  position: relative;
+  width: 100%;
+  display: flex;
+}

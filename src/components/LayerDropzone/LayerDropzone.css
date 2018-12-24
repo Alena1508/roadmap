@@ -1,0 +1,15 @@
+.layer-dropzone {
+  display: none;
+}
+
+.layer-dropzone-active {
+  position: relative;
+  background: transparent;
+  height: 50px;
+  border: 1px dashed grey;
+  z-index: 100;
+  width: 33%;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+}

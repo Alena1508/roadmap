@@ -1,0 +1,19 @@
+.roadmap-item {
+  background-color: #346fb8;
+  border-radius: 2px;
+  color: white;
+  padding: 5px;
+  width: 33%;
+  z-index: 5;
+  position: relative;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+}
+.roadmap-item-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #fff;
+  cursor: pointer;
+}

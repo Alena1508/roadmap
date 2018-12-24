@@ -1,0 +1,112 @@
+.roadmap {
+  background: lightgrey;
+  min-width: 800px;
+  height: 100%;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  position: relative;
+}
+.roadmap-header {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+.roadmap-header-item {
+  padding: 10px 15px;
+}
+.roadmap-header-item.active {
+  position: relative;
+}
+.roadmap-header-item.active:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: dodgerblue;
+}
+.dropzone {
+  display: none;
+}
+
+.dropzone-active {
+  background: whitesmoke;
+  color: black;
+  display: flex;
+  align-items: center;
+  border: dashed 1px grey;
+  height: 100px;
+  margin: 20px;
+}
+.text {
+  margin: auto;
+}
+/*.years-line {*/
+  /*width: 100%;*/
+  /*margin: 15px 45px;*/
+  /*padding: 0;*/
+  /*border: 1px solid red;*/
+  /*list-style-type: none;*/
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+/*}*/
+/*.years-line-item {*/
+  /*display: flex;*/
+  /*width: 50%;*/
+  /*position: relative;*/
+/*}*/
+/*.years-line-name {*/
+  /*display: flex;*/
+/*}*/
+/*.quarter-line {*/
+  /*display: flex;*/
+  /*padding: 0;*/
+  /*width: 100%;*/
+/*}*/
+/*.years-line-item:first-child .years-line-item:first-child .month-line {*/
+  /*left: -10px;*/
+/*}*/
+/*.month-line {*/
+  /*padding: 0;*/
+  /*display: flex;*/
+  /*position: absolute;*/
+  /*top: 20px;*/
+  /*left: 0;*/
+  /*justify-content: space-between;*/
+  /*right: 0;*/
+  /*list-style-type: none;*/
+/*}*/
+.timeline-container {
+  min-height: 25px;
+  margin-left: 30px;
+  margin-top: 40px;
+  position: relative;
+}
+.timeline-blocks-wrapper {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  min-height: 70px;
+  z-index: 1;
+  height: 100%;
+}
+.timeline-block {
+  /*border-right: 1px solid grey;*/
+  position: relative;
+}
+.timeline-block:nth-child(3n):before {
+  border-right: none;
+  position: absolute;
+  top: -15px;
+  left: -5px;
+  display: flex;
+  justify-content: center;
+  content: 'Q';
+}
+

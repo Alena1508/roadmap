@@ -1,0 +1,32 @@
+
+body {
+  color: black;
+}
+
+h1, h3 {
+  margin: 0;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 20fr 4fr;
+  grid-template-rows: 40px 80px  minmax(70%, 80vmax);;
+  grid-template-areas:
+  'header header'
+  'title title'
+  'roadmap sidebar';
+  height: 100vh;
+}
+
+.title{
+  grid-area: title;
+  font-weight: normal;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
+.timeline {
+  grid-area: roadmap;
+}

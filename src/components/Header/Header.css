@@ -1,0 +1,48 @@
+.header {
+  grid-area: header;
+  display: flex;
+  background-color: white;
+  height: 40px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border-bottom: 1px solid grey;
+}
+
+.logo {
+  border-right: 1px solid grey;
+  padding: 4px 4px 4px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  color: black;
+  font-size: 20px;
+  padding: 8px 10px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  cursor: pointer;
+}
+
+
+
+#logo-main  {
+  height: 20px;
+}
+
+#logo-main .bar1 {
+  fill: #1973BA;
+}
+
+#logo-main .bar2 {
+  fill: #F58A1F;
+}
+
+#logo-main .bar3 {
+  fill: #CD2027;
+}

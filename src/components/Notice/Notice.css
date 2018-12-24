@@ -1,0 +1,41 @@
+.notice-wrapper {
+    background: #fff;
+    color: #000;
+    position: absolute;
+    top: -40px;
+    right: 15px;
+    width: 450px;
+    height: 200px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: -5px 1px 50px 0px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+.notice-wrapper p {
+    margin-bottom: 30px;
+}
+.notice-wrapper::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 60px;
+    border: 15px solid transparent;
+    border-left: 20px solid #fff;
+}
+.notice-close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+.notice-button {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    background: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
