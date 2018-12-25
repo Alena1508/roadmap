@@ -47,41 +47,6 @@
 .text {
   margin: auto;
 }
-/*.years-line {*/
-  /*width: 100%;*/
-  /*margin: 15px 45px;*/
-  /*padding: 0;*/
-  /*border: 1px solid red;*/
-  /*list-style-type: none;*/
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-/*}*/
-/*.years-line-item {*/
-  /*display: flex;*/
-  /*width: 50%;*/
-  /*position: relative;*/
-/*}*/
-/*.years-line-name {*/
-  /*display: flex;*/
-/*}*/
-/*.quarter-line {*/
-  /*display: flex;*/
-  /*padding: 0;*/
-  /*width: 100%;*/
-/*}*/
-/*.years-line-item:first-child .years-line-item:first-child .month-line {*/
-  /*left: -10px;*/
-/*}*/
-/*.month-line {*/
-  /*padding: 0;*/
-  /*display: flex;*/
-  /*position: absolute;*/
-  /*top: 20px;*/
-  /*left: 0;*/
-  /*justify-content: space-between;*/
-  /*right: 0;*/
-  /*list-style-type: none;*/
-/*}*/
 .timeline-container {
   height: 100%;
   padding-left: 30px;
@@ -92,6 +57,7 @@
 .timeline-blocks-wrapper {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   min-height: 70px;
   z-index: 1;
 }
@@ -99,7 +65,12 @@
   flex: 1 0 auto;
   position: relative;
 }
-.quater{
+.timeline-block span {
+  position: absolute;
+  top: -10px;
+  left: -25px;
+}
+.quarter:before {
   border-right: none;
   position: absolute;
   top: -15px;

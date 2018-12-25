@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import LayerDropzone from '../LayerDropzone/LayerDropzone';
-import {blocks, blockWidth, firstBlockWidth} from '../../constants/constants';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCaretDown} from '@fortawesome/free-solid-svg-icons';
 import './LayerContainer.css';

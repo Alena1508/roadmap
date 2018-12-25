@@ -3,10 +3,9 @@ import {
   DropTarget,
 } from 'react-dnd';
 import LayerContainer from "../LayerContainer/LayerContainer";
-import {blocks, CardTypes, firstBlockWidth, blockWidth} from '../../constants/constants';
+import {CardTypes, quarters, START_DATE, END_DATE} from '../../constants/constants';
 import NoticeLine from '../Notice/NoticeLine';
 import NoticeBar from '../Notice/NoticeBar';
-import {times} from '../../constants/constants';
 import moment from 'moment';
 import "./Roadmap.css";
 
@@ -16,10 +15,6 @@ const boxTarget = {
     component.handleDrop(monitor.getItem());
   }
 }
-
-const START_DATE = "2018-12-01";
-const END_DATE = "2020-01-01";
-
 
 class Roadmap extends React.Component {
 
@@ -61,12 +56,12 @@ class Roadmap extends React.Component {
   };
 
   getMonthArray = (start, end) => {
-    let startDate = moment(START_DATE, "YYYY-M-DD");
-    const endDate = moment(END_DATE, "YYYY-M-DD").endOf("month");
+    let startDate = moment(START_DATE, "YYYY-M");
+    const endDate = moment(END_DATE, "YYYY-M").endOf("month");
     const allMonthsInPeriod = [];
     while (startDate.isBefore(endDate)) {
       allMonthsInPeriod.push({
-        date: startDate.format("YYYY-MM-DD"),
+        date: startDate.format("YYYY-MM"),
         year: startDate.format("YYYY"),
         month: startDate.format("MM"),
       });
@@ -95,51 +90,27 @@ class Roadmap extends React.Component {
           <li className="roadmap-header-item">Planning board</li>
           <li className="roadmap-header-item">Parking lot</li>
         </ul>
-        {/*<ul className="years-line">*/}
-        {/*{*/}
-        {/*times.map((i, index) => (*/}
-        {/*<li*/}
-        {/*className="years-line-item"*/}
-        {/*key={index}*/}
-        {/*>*/}
-        {/*<div className="years-line-name">{i.year}</div>*/}
-        {/*<ul*/}
-        {/*className="quarter-line"*/}
-        {/*>*/}
-        {/*{*/}
-        {/*i.quarters.map((j, index) => (*/}
-        {/*<li*/}
-        {/*className="years-line-item"*/}
-        {/*key={index}*/}
-        {/*// style={{ width: `${blockWidth}%` }}*/}
-        {/*>*/}
-        {/*<div>{j.name}</div>*/}
-        {/*<ul className="month-line">*/}
-        {/*{*/}
-        {/*j.months.map((k, index) => (*/}
-        {/*<li*/}
-        {/*className="month-line-item"*/}
-        {/*key={index}*/}
-        {/*>.</li>*/}
-        {/*))*/}
-        {/*}*/}
-        {/*</ul>*/}
-        {/*</li>*/}
-        {/*))*/}
-        {/*}*/}
-        {/*</ul>*/}
-        {/*</li>*/}
-        {/*))*/}
-        {/*}*/}
-        {/*</ul>*/}
         <div className="timeline-container">
             <div className="timeline-blocks-wrapper">
               {
                 month.map(({date, year, month}, index) => {
+
+                  if ((month - 1) % 3 === 0) {
+                    quarters.forEach(item => {
+
+                    })
+                    return <div
+                      key={date}
+                      className={"timeline-block"}
+                    >
+                      <span>Q{year}</span>
+                      .
+                    </div>
+                  }
                   return <div
                     key={date}
-                    className={["timeline-block", (month-1) % 4 === 0 ? 'quater' : null ]}
-                  >.{date}</div>
+                    className={`timeline-block ${(month - 1) % 3 === 0 ? `quarter` : null }`}
+                  >.</div>
                 })
               }
             </div>
